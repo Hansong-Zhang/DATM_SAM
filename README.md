@@ -2,6 +2,7 @@
 
 ## Getting Started
 **Step 1: Prepare the ImageNet-1k Dataset**
+
 if you do not have it in your device, please download the training set by
 ```
 wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar --no-check-certificate
@@ -15,16 +16,19 @@ next, put the official [pytorch example script](https://github.com/pytorch/examp
 bash extract_ILSVRC.sh
 ```
 **Step 2: Download the Pre-trained Segment Anything Model Parameters**
+
 find a folder that you would like to hold the parameters of Segment Anything Model (need 2.4 GB)
 ```
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
 ```
 **Step 3: Create environment as follows**
+
 ```
 conda env create -f environment.yaml
 conda activate distill_sam
 ```
 **Step 4: Generate expert trajectories** 
+
 - Change the **data_path** (the folder of imagenet) and **buffer_path** (where to save the training trajectories) and **logs_dir** (where to save the buffer training logs) in buffer/buffer_FTD.py
 - train the corresponding expert trajectories by
 ```
@@ -33,6 +37,7 @@ export CUDA_VISIBLE_DEVICES=xxx
 bash run_buffer_xxxxxx.sh
 ```
 **Step 5: Perform the distillation**
+
 - first, you need to change the paths in utils/cfg.py
 1. **buffer_path**: the path to the expert trajectories in **Step 3**
 2. **data_path**: the path to hold imagenet dataset
