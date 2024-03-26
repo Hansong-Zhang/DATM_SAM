@@ -1,4 +1,4 @@
-# [NeurIPS 2024] Towards Lossless Large-Scale Dataset Distillation via Foreground Separation
+# Towards Lossless Large-Scale Dataset Distillation via Foreground Separation
 
 ## Getting Started
 **Step 1: Prepare the ImageNet-1k Dataset**
